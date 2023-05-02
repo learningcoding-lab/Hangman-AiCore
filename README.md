@@ -20,7 +20,7 @@ Clone this repository to your local machine.
 7. If the player correctly guesses the entire word before running out of attempts, they win the game.
 
 # Milestone 2: Variables for the game was created
-The python file, milestone_2.py was created for this task. This consisted of 4 main tasks broken down. For task 1 and 2, initially we defined a list of words for the game and imported the random module and its .choice() function/method to draw out a randomly generated word from the list. This was then assigned to a variable called 'word'. 
+The python file, ```milestone_2.py``` was created for this task. This consisted of 4 main tasks broken down. For task 1 and 2, initially we defined a list of words for the game and imported the ```random``` module and its ```.choice()``` function/method to draw out a randomly generated word from the list. This was then assigned to a variable called ```word```. 
 
 ```python
 import random
@@ -29,7 +29,7 @@ word = random.choice(word_list)
 print(word)
 ```
 
-For Task 3 and 4, a new user input was created and the validity of each of these guesses were compared to check they are present in the word_list.
+For Task 3 and 4, a new user input was created and the validity of each of these guesses were compared to check they are present in the ```word_list```.
 
 ```python
 if len(guess) == 1 and guess.isalpha() is True:
@@ -41,7 +41,7 @@ else:
  
  # Milestone 3: Checking if the guessed character is in the word
  
- Two main functions such as ```python check_guess``` and ```python ask_for_input``` was defined. 
+ Two main functions such as ```check_guess``` and ```ask_for_input``` were defined. 
 
 ## How to Contribute
 If you would like to contribute to this project, feel free to fork this repository and submit a pull request. Please make sure to write clear and concise commit messages and comments in your code.

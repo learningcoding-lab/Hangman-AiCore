@@ -41,7 +41,7 @@ else:
  
  # Milestone 3: Checking if the guessed character is in the word
  
- 
+ Two main functions such as ```python check_guess``` and ```python ask_for_input``` was defined. 
 
 ## How to Contribute
 If you would like to contribute to this project, feel free to fork this repository and submit a pull request. Please make sure to write clear and concise commit messages and comments in your code.

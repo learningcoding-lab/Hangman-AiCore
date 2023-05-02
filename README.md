@@ -31,16 +31,17 @@ print(word)
 
 For Task 3 and 4, a new user input was created and the validity of each of these guesses were compared to check they are present in the word_list.
 
-      while True:
-          guess = input('Please enter a single letter: ') #asks user for input 
+```python
+if len(guess) == 1 and guess.isalpha() is True:
+    print('Good Guess!')
 
-          if len(guess) == 1 and guess.isalpha() is True:
-            print('Good guess!: ', guess)
-            break
-
-          else:
-            print("Invalid letter. Please, enter a single alphabetical character.")
-
+else:
+    print("Oops! That's not a valid input!")
+```
+ 
+ # Milestone 3: Checking if the guessed character is in the word
+ 
+ 
 
 ## How to Contribute
 If you would like to contribute to this project, feel free to fork this repository and submit a pull request. Please make sure to write clear and concise commit messages and comments in your code.

@@ -22,6 +22,7 @@ if len(guess) == 1 and guess.isalpha() is True:
 else:
     print("Oops! That's not a valid input!")
 
-
+print("The random fruit was:", word)
+print("Your guess was:", guess)
 
 

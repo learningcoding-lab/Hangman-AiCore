@@ -68,6 +68,7 @@ class Hangman():
                print("You already tried that letter!")
                
            else:
+                self.list_of_guesses.append(guess)
                 self.check_guess(guess) #check and call the guess method
                 break
            
@@ -78,18 +79,70 @@ class Hangman():
         Create an else block and call the check_guess method. 
         Remember to pass the guess as an argument to this method. 
         """
+
+    def __init__ (self, word_list, num_lives=5):
+        self.word_list = word_list
+        self.num_lives = num_lives
+        self.word = print(random.choice(self.word_list))
+        self.word_guessed = ['' for _ in self.word]
+        self.num_letters = len(set(self.word))
+        self.list_of_guesses = []
+
+    """ TASK 3: Return to your check_guess method and extend it to replace the underscore(s) in the word_guessed with the letter guessed by the user.
+    In the if block of your check_guess method, after your print statement, do the following: 
+    Create a for-loop that will loop through each letter in the word.
+    Within the for-loop, do the following:
+    1. Create an <code>if</code> statement that checks if the letter is equal to the guess.
+    2. In the <code>if</code> block, replace the corresponding "_" in the <code>word_guessed</code> with the guess. 
+    HINT: You can index the <code>word_guessed</code> at the position  of the letter and assign it to the letter """
+    
+    def check_guess(self, guess):
+        guess = guess.lower()  #consistency of letter inputs
+        if guess in self.word: #to find if the guessed letter is in the word
+            print(f"Good guess! {guess} is in the word!") 
+            # creates an iterator that produces pairs of index (i) and value (letter) for each character in self.word
+            for i, letter in enumerate(self.word):
+                    if letter == guess: #if the character(letter) in word matched the guess
+                        self.word_guessed[i] = guess #replaced the blank in that index with guessed letter
+            self.num_lives -= 1
+        else:
+            print("Sorry, wrong guess! Try again!")
+
+    """ TASK 4: Define what happens if the guess is not in the word you are trying to guess.
+    Step 1. In the check_guess method, Create an else statement.
+    Step 2: Within the else block:
+    Reduce `num_lives' by 1.
+    print a message saying "Sorry, {letter} is not in the word."
+    print another message saying "You have {num_lives} lives left."
+    """
+    def check_guess(self, guess):
+        guess = guess.lower()  #consistency of letter inputs
+        if guess in self.word: #to find if the guessed letter is in the word
+            print(f"Good guess! {guess} is in the word!") 
+            # creates an iterator that produces pairs of index (i) and value (letter) for each character in self.word
+            for i, letter in enumerate(self.word):
+                    if letter == guess: #if the character(letter) in word matched the guess
+                        self.word_guessed[i] = guess #replaced the blank in that index with guessed letter
+            self.num_lives -= 1
+        else:
+            self.num_lives -=1
+            print(f"Sorry, {letter} is not in the word.")
+            print(f"You have {self.num_lives} left!")
+
 #Test the hangman game
-if __name__ == "__main":
+# Test the Hangman game
+if __name__ == "__main__":
     word_list = ["apple", "banana", "cherry", "orange", "grape", "watermelon"]
     hangman_game = Hangman(word_list)
-    print(f"Word to guess: {hangman_game.word}")
-    print(f"Word guessed: {hangman_game.word_guessed}")
-    print(f"Number of unique letters: {hangman_game.num_letters}")
-    print(f"Number of lives: {hangman_game.num_lives}")
-    print(f"List of guesses: {hangman_game.list_of_guesses}")
 
-    user_guess = hangman_game.ask_for_input()
-    print(f"You guessed: {user_guess}")
+    while True:
+        user_guess = hangman_game.ask_for_input()
+        print(f"Word guessed: {' '.join(hangman_game.word_guessed)}")
+        print(f"List of guesses: {hangman_game.list_of_guesses}")
 
-
-
+        if hangman_game.num_lives == 0:
+            print("Game over! You're out of lives.")
+            break
+        elif all(letter != '' for letter in hangman_game.word_guessed):
+            print("Congratulations! You've guessed the word!")
+            break

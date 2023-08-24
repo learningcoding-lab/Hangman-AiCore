@@ -1,5 +1,13 @@
 # Hangman-AiCore Project
 
+## Table of Contents
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [File Structure](#file-structure)
+- [License](#license)
+
+
 This is a command-line implementation of the classic Hangman game in Python. The program generates a random word from a list of words, and the user must guess the letters in the word one at a time. The user has a limited number of guesses, and each incorrect guess results in the drawing of a new part of a hangman figure. If the user guesses all the letters in the word before running out of guesses, they win the game. Otherwise, the hangman figure is fully drawn, and the user loses the game.
 Hangman Game
 
@@ -19,29 +27,45 @@ Clone this repository to your local machine.
 6. If the player guesses a letter that is in the word, they will be informed and the corresponding dashes will be replaced with the letter.
 7. If the player correctly guesses the entire word before running out of attempts, they win the game.
 
-# Milestone 2: Variables for the game was created
-The python file, ```milestone_2.py``` was created for this task. This consisted of 4 main tasks broken down. For task 1 and 2, initially we defined a list of words for the game and imported the ```random``` module and its ```.choice()``` function/method to draw out a randomly generated word from the list. This was then assigned to a variable called ```word```. 
+## Description
+The Hangman Game Project is a Python-based implementation of the classic word-guessing game. The aim of the project is to provide an interactive and entertaining game where players try to guess letters to uncover a hidden word within a limited number of attempts. Through this project, we practice object-oriented programming, user input validation, and game logic implementation.
 
-```python
-import random
-word_list = word_list = ['banana', 'apple', 'orange', 'kiwi', 'mango']
-word = random.choice(word_list)
-print(word)
+## Installation
+To play the Hangman game, follow these steps:
+
+1. Clone this repository to your local machine using:
+   ```
+   git clone https://github.com/your-username/hangman-game.git
+   ```
+
+2. Navigate to the project directory:
+   ```
+   cd hangman-game
+   ```
+
+3. Run the game by executing the Python script:
+   ```
+   python milestone_5.py
+   ```
+
+## Usage
+1. The game will display underscores representing the letters in the word to guess.
+2. Enter a single alphabetical character to guess a letter.
+3. The game will provide feedback about the correctness of the guess and the remaining lives.
+4. Continue guessing until you either guess the word or run out of lives.
+
+## File Structure
+The project files are structured as follows:
+
+```
+hangman-game/
+├── milestone_4.py
+├── milestone_5.py
+└── README.md
 ```
 
-For Task 3 and 4, a new user input was created and the validity of each of these guesses were compared to check they are present in the ```word_list```.
+- `milestone_4.py`: Contains the Hangman class definition and game logic implementation up to Milestone 4.
+- `milestone_5.py`: Contains the complete Hangman game implementation up to Milestone 5, including the play_game function.
+- `README.md`: This README file provides information about the project.
 
-```python
-if len(guess) == 1 and guess.isalpha() is True:
-    print('Good Guess!')
-
-else:
-    print("Oops! That's not a valid input!")
-```
- 
- # Milestone 3: Checking if the guessed character is in the word
- 
- Two main functions such as ```check_guess``` and ```ask_for_input``` were defined. For the first task 
-
-## How to Contribute
-If you would like to contribute to this project, feel free to fork this repository and submit a pull request. Please make sure to write clear and concise commit messages and comments in your code.
+---

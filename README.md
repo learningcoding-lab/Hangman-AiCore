@@ -35,7 +35,7 @@ To play the Hangman game, follow these steps:
 
 1. Clone this repository to your local machine using:
    ```
-   git clone https://github.com/your-username/hangman-game.git
+   https://github.com/montahac/Hangman-AiCore.git
    ```
 
 2. Navigate to the project directory:
